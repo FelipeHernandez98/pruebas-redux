@@ -1,7 +1,7 @@
 import logo from './logo.svg'
 import { useSelector, useDispatch } from 'react-redux'
 import './App.css'
-import { increment, decrement } from './store/slices/counter/counterSlice';
+import { increment, decrement, incrementByAmount } from './store/slices/counter/counterSlice';
 
 function App() {
   const { counter } = useSelector(state=> state.counter)
@@ -18,6 +18,9 @@ function App() {
           </button>
           <button type="button" onClick={() => { dispatch(decrement())}}>
             Decrement
+          </button>
+          <button type="button" onClick={() => { dispatch(incrementByAmount(2))}}>
+            IncrementBy
           </button>
         </p>
       </header>
